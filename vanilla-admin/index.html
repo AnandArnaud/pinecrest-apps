@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acme Admin</title>
+  <style>
+    :root { --bg:#0f1220; --card:#181c2e; --line:#2a2f45; --fg:#e7e9f3; --muted:#9aa0b5; --accent:#5b8cff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--fg); }
+    .hidden { display:none !important; }
+    header { display:flex; justify-content:space-between; align-items:center; padding:16px 24px; border-bottom:1px solid var(--line); }
+    header h1 { font-size:18px; margin:0; }
+    main { max-width:880px; margin:0 auto; padding:32px 24px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:24px; }
+    label { display:block; font-size:13px; color:var(--muted); margin:12px 0 6px; }
+    input { width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--line); background:transparent; color:var(--fg); }
+    button { cursor:pointer; border:0; border-radius:8px; padding:10px 16px; font-weight:600; background:var(--accent); color:#fff; }
+    button.ghost { background:transparent; border:1px solid var(--line); color:var(--fg); }
+    table { width:100%; border-collapse:collapse; margin-top:16px; }
+    th,td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); font-size:14px; }
+    .row-actions button { padding:6px 10px; font-size:13px; }
+    .toolbar { display:flex; justify-content:space-between; align-items:center; }
+  </style>
+</head>
+<body>
+  <section id="login-view">
+    <main>
+      <div class="card" style="max-width:380px;margin:64px auto;">
+        <h1 style="margin-top:0">Sign in to Acme Admin</h1>
+        <form id="login-form">
+          <label for="email">Work email</label>
+          <input id="email" type="email" value="admin@acme.test" required />
+          <label for="password">Password</label>
+          <input id="password" type="password" value="password" required />
+          <button type="submit" style="margin-top:18px;width:100%">Sign in</button>
+        </form>
+      </div>
+    </main>
+  </section>
+
+  <section id="dashboard-view" class="hidden">
+    <header>
+      <h1>Acme Admin</h1>
+      <button id="logout-btn" class="ghost">Sign out</button>
+    </header>
+    <main>
+      <div class="card">
+        <div class="toolbar">
+          <h2 style="margin:0;font-size:16px">Products</h2>
+          <button id="new-item-btn">New product</button>
+        </div>
+        <table>
+          <thead><tr><th>Name</th><th>Price</th><th>Status</th><th></th></tr></thead>
+          <tbody id="items-body"></tbody>
+        </table>
+      </div>
+    </main>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

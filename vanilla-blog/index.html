@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Overlook — Blog</title>
+  <style>
+    :root{--bg:#fff;--fg:#16181d;--muted:#5f6570;--line:#eceef1;--accent:#0b5cff}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Georgia,ui-serif,serif;background:var(--bg);color:var(--fg);line-height:1.6}
+    header{border-bottom:1px solid var(--line);padding:22px 24px;text-align:center}
+    header h1{margin:0;font-size:26px;letter-spacing:-.01em}
+    header p{margin:4px 0 0;color:var(--muted);font-family:system-ui,sans-serif;font-size:14px}
+    main{max-width:680px;margin:0 auto;padding:32px 24px}
+    article{border-bottom:1px solid var(--line);padding:22px 0}
+    article h2{margin:0 0 6px;font-size:20px}
+    article a{color:inherit;text-decoration:none}
+    article .meta{color:var(--muted);font-size:13px;font-family:system-ui,sans-serif}
+    .box{background:#f7f8fa;border:1px solid var(--line);border-radius:12px;padding:20px;margin-top:28px;font-family:system-ui,sans-serif}
+    .box h3{margin:0 0 10px;font-size:16px}
+    form{display:flex;gap:8px;flex-wrap:wrap}
+    input,textarea{font-family:system-ui,sans-serif;padding:10px 12px;border:1px solid var(--line);border-radius:8px;flex:1;min-width:180px}
+    button{cursor:pointer;border:0;border-radius:8px;padding:10px 16px;background:var(--accent);color:#fff;font-weight:600;font-family:system-ui,sans-serif}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Overlook</h1>
+    <p>Field notes on building software</p>
+  </header>
+  <main>
+    <div id="posts"></div>
+
+    <div class="box">
+      <h3>Subscribe to the newsletter</h3>
+      <form id="subscribe-form">
+        <input id="subscribe-email" type="email" placeholder="you@example.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="box">
+      <h3>Get in touch</h3>
+      <form id="contact-form">
+        <input id="contact-name" type="text" placeholder="Name" required />
+        <input id="contact-email" type="email" placeholder="Email" required />
+        <textarea id="contact-message" placeholder="Message" rows="3" style="flex-basis:100%"></textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

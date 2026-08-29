@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nimbus — Store</title>
+  <style>
+    :root{--bg:#faf9f7;--fg:#1c1b1a;--muted:#6b6862;--line:#e7e3dc;--accent:#111}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+    header{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;border-bottom:1px solid var(--line)}
+    header h1{font-size:20px;margin:0;letter-spacing:-.02em}
+    .cart-btn{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:600}
+    main{max-width:1000px;margin:0 auto;padding:32px 28px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+    .product{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+    .product .thumb{height:140px;background:linear-gradient(135deg,#e9e4dc,#d8d1c6)}
+    .product .body{padding:14px}
+    .product h3{margin:0 0 4px;font-size:15px}
+    .product .price{color:var(--muted);font-size:14px;margin-bottom:10px}
+    button.add{width:100%;cursor:pointer;border:0;border-radius:8px;padding:9px;background:var(--accent);color:#fff;font-weight:600}
+    dialog{border:1px solid var(--line);border-radius:14px;padding:0;width:min(420px,92vw)}
+    .drawer{padding:20px}
+    .drawer h2{margin:0 0 12px;font-size:17px}
+    .line{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+    .checkout{margin-top:16px;width:100%;cursor:pointer;border:0;border-radius:8px;padding:11px;background:var(--accent);color:#fff;font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nimbus</h1>
+    <button class="cart-btn" id="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+  </header>
+  <main>
+    <div class="grid" id="product-grid"></div>
+  </main>
+  <dialog id="cart-dialog">
+    <div class="drawer">
+      <h2>Your cart</h2>
+      <div id="cart-lines"></div>
+      <button class="checkout" id="checkout-btn">Checkout</button>
+    </div>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
