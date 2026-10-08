@@ -1,11 +1,9 @@
-# starter-app-fixtures
+# pinecrest-apps
 
-Clean, purpose-built starter apps used as agent-evaluation fixtures. Each app is
-realistic but minimal, has a clear set of user actions worth tracking, and ships
-**with no product analytics wired in** — the user-action handlers just `console.log`
-today. Adding/instrumenting analytics is the task an agent is dropped in to do.
+Six small apps, each with a handful of user actions. The action handlers log to the
+console for now.
 
-| Fixture | Stack | Archetype | Trackable actions |
+| App | Stack | Archetype | User actions |
 |---|---|---|---|
 | [`vanilla-admin`](./vanilla-admin) | plain HTML/CSS/JS | admin panel | sign in · create product · delete product · sign out |
 | [`vanilla-shop`](./vanilla-shop) | plain HTML/CSS/JS | storefront | open cart · add to cart · checkout |
